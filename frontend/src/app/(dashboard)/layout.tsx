@@ -45,7 +45,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           {NAV.map(({ href, icon: Icon, label }) => {
             const active = pathname === href;
             return (
-              <Link key={href} href={href}
+              <Link key={href} href={href as any}
                 className={`flex items-center gap-2.5 px-4 py-2 text-xs transition-all border-l-2 ${
                   active
                     ? "text-amber-400 border-amber-400 bg-amber-500/10 font-medium"

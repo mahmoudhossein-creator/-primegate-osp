@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "PrimeGate OSP",
+    "slug": "primegate-osp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "primegate",
+    "splash": { "backgroundColor": "#030712" },
+    "ios":     { "supportsTablet": false, "bundleIdentifier": "com.primegate.osp" },
+    "android": { "adaptiveIcon": { "foregroundImage": "./assets/icon.png", "backgroundColor": "#030712" },
+                 "package": "com.primegate.osp",
+                 "permissions": ["ACCESS_FINE_LOCATION","ACCESS_COARSE_LOCATION","CAMERA"] },
+    "plugins": [
+      ["expo-location",     { "locationAlwaysAndWhenInUsePermission": "PrimeGate needs location for geo-fence check-in." }],
+      ["expo-camera",       { "cameraPermission": "PrimeGate needs camera for photo verification." }],
+      ["expo-image-picker", { "photosPermission": "PrimeGate needs photos for BOQ evidence." }]
+    ],
+    "extra": { "apiUrl": "http://localhost:8000" }
+  }
+}

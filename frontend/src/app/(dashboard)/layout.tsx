@@ -9,13 +9,13 @@ import {
 } from "lucide-react";
 
 const NAV = [
-  { href: "/",               icon: LayoutDashboard, label: "Dashboard" },
-  { href: "/teams",          icon: Users,           label: "Teams" },
-  { href: "/work-orders",    icon: FileCheck,       label: "Work Orders" },
-  { href: "/daily-planning", icon: CalendarDays,    label: "Daily Planning" },
-  { href: "/expenses",       icon: Receipt,         label: "Sites Expenses" },
-  { href: "/materials",      icon: Package,         label: "Materials" },
-  { href: "/reports",        icon: BarChart3,       label: "Reports" },
+  { href: "/" as const,               icon: LayoutDashboard, label: "Dashboard" },
+  { href: "/teams" as const,          icon: Users,           label: "Teams" },
+  { href: "/work-orders" as const,    icon: FileCheck,       label: "Work Orders" },
+  { href: "/daily-planning" as const, icon: CalendarDays,    label: "Daily Planning" },
+  { href: "/expenses" as const,       icon: Receipt,         label: "Sites Expenses" },
+  { href: "/materials" as const,      icon: Package,         label: "Materials" },
+  { href: "/reports" as const,        icon: BarChart3,       label: "Reports" },
 ];
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -30,9 +30,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="flex h-screen bg-gray-950 overflow-hidden">
-      {/* Sidebar */}
       <aside className="w-48 flex-shrink-0 bg-gray-900 border-r border-gray-800 flex flex-col">
-        {/* Logo */}
         <div className="px-4 py-4 border-b border-gray-800">
           <div className="flex items-center gap-2.5">
             <div className="w-7 h-7 bg-amber-500 rounded-md flex items-center justify-center text-black font-bold text-xs">PG</div>
@@ -43,7 +41,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           </div>
         </div>
 
-        {/* Nav */}
         <nav className="flex-1 py-3 overflow-y-auto">
           {NAV.map(({ href, icon: Icon, label }) => {
             const active = pathname === href;
@@ -62,7 +59,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           })}
         </nav>
 
-        {/* User */}
         <div className="p-3 border-t border-gray-800">
           <div className="flex items-center gap-2 mb-2">
             <div className="w-7 h-7 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 text-xs font-medium">
@@ -80,7 +76,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </div>
       </aside>
 
-      {/* Main */}
       <main className="flex-1 flex flex-col overflow-hidden min-w-0">
         {children}
       </main>
